@@ -4,6 +4,7 @@
 require_once(__DIR__ . "/../../controller/OrganizacoesController.php");
 require_once(__DIR__ . "/../../controller/CategoriasController.php");
 require_once(__DIR__ . "/../include/header.php");
+require_once(__DIR__ . "/../../util/config.php");
 
 $categoriaCont = new CategoriasController();
 $categorias = $categoriaCont->listar();
@@ -74,6 +75,7 @@ $organizacoes = $organizaCont->listar();
                 </select>
             </div>
 
+            <input type="hidden" id="hddBaseUrl" value="<?= BASE_URL ?>" />
             <input type="hidden" name="id" 
                 value="<?php echo ($lutador ? $lutador->getId() : 0); ?>" />
             
@@ -85,7 +87,7 @@ $organizacoes = $organizaCont->listar();
         </form>
     </div>
 
-    <div class="col-6">
+    <div class="col-6" id="divMsgErro">
         <?php if($msgErro): ?>
             <div class="alert alert-danger">
                 <?php echo $msgErro; ?>

@@ -9,4 +9,4 @@ define("DB_USER", "root");
 define("DB_PASSWORD", "");
 
 //Constante com a URL do sistema
-define("BASE_URL", "/crud_lutadores");
+define("BASE_URL", "/ajuda-soster");
